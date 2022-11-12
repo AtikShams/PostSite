@@ -1,0 +1,63 @@
+{% extends 'common.html' %}
+{% block title %}
+  Create a Post
+{% endblock title %}
+{% block style %}
+ 
+  input[type=text], input[type=password],textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #033E3E;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 230px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-top:8%;
+  }
+
+ button:hover {
+    opacity: 0.8;
+  }
+
+  .cont {
+    margin-top:5%;
+    margin-bottom:5%;
+    margin-left:26%;
+    margin-right:24%;
+  }
+
+
+  }
+{% endblock style %}
+
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="cont">
+        <center><h1><u>Create a Post</u></h1>  </center>
+      <label for="uname"><b>Post Title</b></label>
+      <input type="text" placeholder="Enter Title" name="btitle" required>
+
+      <label for="des"><b>Post Description</b></label>
+      <textarea type="text" placeholder="Enter Description" name="des" required style="width: 800px; height: 250px;" spellcheck="true"></textarea>
+
+        <button type="submit"><b>Post</b></button>
+    </div>
+
+  </form>
+
+{% endblock content %}
+
+

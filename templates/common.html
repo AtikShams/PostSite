@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    {% block title %}
+    {% endblock title %}
+  </title>
+<style>
+body{
+   margin:0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20;
+  overflow: hidden;
+  background-color: #307D7E;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #5E7D7E;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+{% block style %}
+{% endblock style %}
+
+</style>
+</head>
+<body>
+<nav>
+<ul>
+  <li><a href="/">Home</a></li>
+  {% if user.is_authenticated %}
+   <li><a href="{% url 'all' %}">All Posts</a></li>
+  <li><a href="{% url 'seepost' %}">Edit Post</a></li>
+  <li><a href="{% url 'createpost' %}">Create Post</a></li>
+  <li style="float:right; margin-right:20px"><a href="/logout">Log Out</a></li>
+
+  {% else %}
+  <li style="float:right"><a href="/signup">Sign Up</a></li>
+  <li style="float:right"><a href="/login">Login</a></li>
+  {% endif %}
+
+</ul>
+</nav>
+<main role="main">
+{% block content %}
+
+{% endblock content %}
+</main>
+</body>
+</html>
+
+

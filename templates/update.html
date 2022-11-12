@@ -1,0 +1,61 @@
+{% extends 'common.html' %}
+{% block title %}
+  Update Post
+{% endblock title %}
+{% block style %}
+
+  input[type=text], input[type=password],textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #008000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 230px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-top:8%;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+
+  .cont {
+    margin-top:5%;
+    margin-bottom:5%;
+    margin-left:25%;
+    margin-right:25%;
+  }
+
+{% endblock style %}
+
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="cont">
+      <center><u><h1>Update Post</h1></u></center>
+      <label for="uname"><b>Post Title</b></label>
+      <input type="text" placeholder="Enter Title" name="btitle" value="{{ post.tital }}" >
+
+      <label for="des"><b>Post Description</b></label>
+      <textarea type="text" placeholder="Enter Description" name="des" style="width: 800px; height: 250px;" spellcheck="true">{{ post.des }}</textarea>
+
+      <button type="submit">Update</button>
+    </div>
+
+  </form>
+
+{% endblock content %}
+
+
+

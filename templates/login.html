@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Login
+  </title>
+<style>
+  
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 10px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background: #DADBDD;
+  }
+  
+  button {
+    background-color: #033E3E;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 230px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-top:8%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .cont {
+    background-color: #20B2AA;
+    height: 400px;
+    margin-top:10%;
+    margin-bottom:5%;
+    margin-left:25%;
+    margin-right:25%;
+    padding-top: 2%;
+
+  }
+
+  }
+
+</style>
+
+<body>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="cont">
+      <h1><center>Login</center></h1>
+      <label style="margin:0px 150px 20px;" for="uname"><b>Username</b></label><br>
+        <input type="text" style="width: 350px; height: 40px; margin:0px 150px 20px;" placeholder="Enter Username" name="uname" required>
+<br>
+      <label style="margin:0px 150px 20px;" for="psw"><b>Password </b></label><br>
+      <input type="password" style="width: 350px; height: 40px; margin:0px 150px 20px;" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+    </div>
+  
+  </form>
+</body>
+</html>
+
+
+
+

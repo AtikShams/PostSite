@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Sign Up
+  </title>
+<style>
+* {box-sizing: border-box}
+
+.cont {
+  background-color: #20B2AA;
+    height: 550px;
+    margin-top:6%;
+    margin-bottom:5%;
+    margin-left:25%;
+    margin-right:25%;
+    padding-top: 2%;
+
+}
+
+  input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 10px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background: #DADBDD;
+}
+
+
+hr {
+  border: 1px solid #008080;
+  margin-bottom: 25px;
+}
+
+.button {
+ background-color: #033E3E;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 230px;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-top:8%;
+}
+
+.button:hover {
+  opacity:1;
+}
+
+a {
+  color: white;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+</style>
+
+
+<body>
+
+<form method="POST">
+    {% csrf_token %}
+  <div class="cont">
+    <center><h1>Sign Up</h1></center>
+
+    <label style="margin:0px 150px 20px;" for="usrname"><b>Username</b></label>
+    <input type="text" style="width: 350px; height: 40px; margin:0px 150px 20px;" placeholder="Enter username" name="uname" id="usrname" required>
+       <br>
+
+    <label style="margin:0px 150px 20px;" for="passw"><b>Password</b></label>
+    <input type="password" style="width: 350px; height: 40px; margin:0px 150px 20px;" placeholder="Enter Password" name="psw" id="passw" required>
+<br>
+    <label style="margin:0px 150px 20px;" for="passw-repeat"><b>Confirm Password</b></label>
+    <input type="password" style="width: 350px; height: 40px; margin:0px 150px 20px;" placeholder="Repeat Password" name="psw-repeat" id="passw-repeat" required>
+
+<br>
+
+     <label style="margin:0px 150px 20px;">
+    <input type="checkbox" >I accept the terms and conditions <a href="#">Terms & Conditions</a>.
+    <button type="submit" class="button">Sign Up</button>
+    <center>  <p>Already have an account? <a href="{% url 'login' %}">Login</a></p> </center>
+  </div>
+</form>
+</body>
+</html>
